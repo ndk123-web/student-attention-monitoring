@@ -1,5 +1,6 @@
 import cv2
 import mediapipe as mp 
+import math
 
 class UseHaarCascade:
     pass 
@@ -61,14 +62,16 @@ class UseMediaPipe:
 
                     face_width = xmax - xmin
                     face_height = ymax - ymin
+                    
+                    distance = math.sqrt((x - face_center_x)**2 + (y - face_center_y)**2)
+                    threashold = 0.25 * face_width
 
-                    # Attention logic (improved)
-                    if abs(x - face_center_x) < 0.2 * face_width and abs(y - face_center_y) < 0.2 * face_height:
+                    if distance < threashold:
                         status = "F"
-                        color = (0, 255, 0)
+                        color = (0,255,0)
                     else:
-                        status = "D"
-                        color = (0, 0, 255)
+                        status = "NF"
+                        color = (0,0,255)
 
                     # Draw box
                     cv2.rectangle(frame, (xmin, ymin), (xmax, ymax), (255, 0, 0), 2)
