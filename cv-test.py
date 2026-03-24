@@ -1,6 +1,5 @@
 '''
-Copyright (c) 2024 Navnath Kadam. All rights reserved.
-Author: Navnath Kadam
+Simple OpenCV-based video capture and visualization module.
 '''
 
 '''
@@ -73,5 +72,50 @@ class OpenCvVideoCapture:
         # Close all OpenCV windows
         cv2.destroyAllWindows()
 
-obj2 = OpenCvVideoCapture()
-obj2.display_video()
+# Create an instance of the OpenCvVideoCapture class and call the display_video method to start capturing and displaying video from the camera
+# obj2 = OpenCvVideoCapture()
+# obj2.display_video()
+
+class OpenCvDrawShapes:
+    """
+    This class is intended to demonstrate how to draw shapes using OpenCV. It will likely contain methods for drawing various shapes such as lines, rectangles, circles, etc., on an image or a blank canvas. The implementation of the draw_shapes method will include the specific OpenCV functions used to create these shapes.
+    """
+    
+    def __init__(self):
+        self.name = "Ndk"
+    
+        """
+        """
+    def draw_shapes(self):
+        
+        cap = cv2.VideoCapture(0)
+        
+        while True:
+            
+            ret, frame = cap.read()
+            
+            if not ret:
+                print("Failed to capture video")
+                break
+                
+            # Display the captured frame in a window titled "Camera" using cv2.imshow(). This will show the live video feed from the camera.
+            # cv2.imshow("Camera", frame)
+            
+            # Draw a blue line on the captured frame from the top-left corner (0, 0) to the point (200, 200) with a thickness of 5 pixels using cv2.line(). The color is specified in BGR format (255, 0, 0) which corresponds to blue.
+            cv2.line(frame, (0, 0), (200, 200), (255, 0, 0), 5)
+            
+            cv2.putText(frame, "Demo", (50, 50),
+                cv2.FONT_HERSHEY_SIMPLEX, 1,
+                (255, 255, 255), 2)
+            
+            cv2.imshow("Camera", frame)
+
+            if cv2.waitKey(1) == 27:
+                break
+        
+        # release means to free up the camera resource after we are done using it. This is important to prevent conflicts with other applications that may want to access the camera later. After releasing the camera, we also call cv2.destroyAllWindows() to close any OpenCV windows that were opened during the video capture process.
+        cap.release()
+        cv2.destroyAllWindows()
+
+obj3 = OpenCvDrawShapes()
+obj3.draw_shapes()
