@@ -1,0 +1,157 @@
+:root {
+  --bg-1: #f3f0e8;
+  --bg-2: #ebe3d3;
+  --ink: #222018;
+  --muted: #5a5347;
+  --card: #fffdf7;
+  --line: #d6ccb6;
+  --good: #2f8f57;
+  --warn: #bf4f3f;
+  --neutral: #7c6f56;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--ink);
+  background: radial-gradient(circle at top right, var(--bg-2), var(--bg-1) 55%);
+}
+
+.page-shell {
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 28px 18px 42px;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: 2.1rem;
+}
+
+.hero p {
+  margin: 8px 0 0;
+  color: var(--muted);
+}
+
+.subtle {
+  font-size: 0.92rem;
+}
+
+.error-text {
+  margin-top: 16px;
+  color: #9f2a1d;
+  font-weight: 700;
+}
+
+.stats-grid {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+}
+
+.stat-card {
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--card);
+  padding: 14px;
+  box-shadow: 0 8px 24px rgba(68, 56, 26, 0.08);
+}
+
+.stat-title {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.stat-value {
+  margin: 8px 0 0;
+  font-size: 1.9rem;
+  font-weight: 700;
+}
+
+.stat-hint {
+  margin: 4px 0 0;
+  font-size: 0.84rem;
+  color: var(--muted);
+}
+
+.stat-good .stat-value {
+  color: var(--good);
+}
+
+.stat-warn .stat-value {
+  color: var(--warn);
+}
+
+.panel {
+  margin-top: 18px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--card);
+  padding: 14px;
+  box-shadow: 0 8px 24px rgba(68, 56, 26, 0.08);
+}
+
+.panel h2 {
+  margin: 0 0 10px;
+}
+
+.table-wrap {
+  overflow: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 760px;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 10px;
+  border-bottom: 1px solid #eee4d0;
+  font-size: 0.92rem;
+}
+
+th {
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  border: 1px solid transparent;
+}
+
+.pill-good {
+  background: #e6f6ec;
+  color: #1f6e42;
+  border-color: #b7e5c9;
+}
+
+.pill-warn {
+  background: #fdebe8;
+  color: #923126;
+  border-color: #f4b8ad;
+}
+
+@media (max-width: 700px) {
+  .hero h1 {
+    font-size: 1.65rem;
+  }
+
+  .page-shell {
+    padding: 20px 12px 28px;
+  }
+}

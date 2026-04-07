@@ -1,3 +1,5 @@
 opencv-python==4.13.0.92
 mediapipe==0.10.14
 numpy>=1.26,<3.0
+fastapi==0.116.1
+uvicorn==0.35.0

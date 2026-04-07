@@ -1,0 +1,15 @@
+{
+  "updated_at": "2026-04-07T10:01:36Z",
+  "students": [
+    {
+      "name": "Navnath",
+      "state": "DISTRACTED",
+      "focus_score": 75.47,
+      "ear": 0.265,
+      "gaze_offset": 0.113,
+      "signals": [
+        "head"
+      ]
+    }
+  ]
+}
